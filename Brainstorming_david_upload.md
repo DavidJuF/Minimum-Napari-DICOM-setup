@@ -2,7 +2,7 @@
 
 ## Zielse:
 
-Ziel des Projekts ist der Aufbau robuster, reproduzierbarer *semantischer Segmentierungen für strukturelle und krankheitsrelevante Bildmanifestationen bei Uveitis* auf OCT/OCTA-Daten.  
+Ziel des Projekts ist der Aufbau robuster, reproduzierbarer *semantischer Segmentierungen für strukturelle und krankheitsrelevante Bildmanifestationen bei Uveitis* in verschiedenenen Bildmodalitäten mit Schwerpunkt OCT.  
 
 einzelne Modelle, die mehrere Sturkuren segmentieren stellen, insbesondere in den frühen Phasen des Projektes die Gefahr dar, sich in komplizierte Traininsmethoden zu verstricken - daher:
 
@@ -22,17 +22,17 @@ Vorteile:
 
 Als Einstieg werden zwei Strukturen gewählt, die sich besonders gut für eine iterative Pipeline-Entwicklung eignen:
 
-### 1. Retinal Pigment Epithelium (RPE)
+### 1. Retinal Pigment Epithelium (RPE) im OCT
 
-Die RPE-Grenze ist in OCT-Bildern in der Regel gut sichtbar und vergleichsweise eindeutig definierbar.  
+Die RPE-Grenze ist in OCT-Bildern in der Regel gut sichtbar und vergleichsweise eindeutig definierbar. Darüberhinaus hat sie eine hohe biologische Relevanz  und es existieren relevante Vorarbeiten auf diesem Gebiet.
 Sie eignet sich daher gut für:
 - initiale Modellvalidierung,
 - Interobserver-Vergleiche,
 - Definition stabiler Referenzlinien für spätere geometrische Marker (z. B. Thickness-Maße).
 
-### 2. Vitreal Area / Vitreous Space
+### 2. Vitreous Space/ Glaskörper im OCT
 
-Die Vitreous-Region ist im Kontext von Uveitis klinisch relevant  ebenso stellt sie die Abgrenzung der Retina zum VIT dar, weist jedoch wesentlich andere Signalcharakteristika auf als retinale Grenzflächen.  
+Der Glaskörper ist im Kontext von Uveitis klinisch relevant, grenzt an die Retina an, weist jedoch wesentlich andere Signalcharakteristika auf als retinale Grenzflächen.  
 Sie erlaubt:
 - die Ableitung krankheitsrelevanter Bildmarker (z. B. Vitreous haze)
 - frühe Auseinandersetzung mit Feature-Engineering jenseits reiner Segmentierung,
@@ -67,7 +67,7 @@ Die resultierenden Segmentierungen werden anschließend regelbasiert zusammengef
 ## Workflow pro Modell
 
 ### Datengrundlage
-- Kombination aus öffentlichen und internen OCT/OCTA-Datensätzen
+- Kombination aus öffentlichen und internen OCT-Datensätzen
 - Harmonisierung von Formaten, Auflösung und Metadaten
 - Strikte Aufteilung in Trainings-, Validierungs- und Testdatensätze  
 
@@ -118,6 +118,6 @@ Wenn sich der Ansatz bewährt, kann die Pipeline schrittweise erweitert werden:
 
 - Layer-Segmentierung auf standardisierten Retina-ROIs
 - zusätzliche uveitisrelevante Manifestationen als eigene Modelle
-- Integration weiterer Modalitäten (z. B. OCTA)
+- Integration weiterer Modalitäten (z. B. OCTA, FAF, Infrarotaufnahmen, FAG)
 
 
